@@ -1,5 +1,13 @@
 # KeyframeExtractor
 
+
+Class style
+Object style <= select
+
+
+// 参考；https://webpack.js.org/guides/asset-management/
+
+
 ## Project setup
 ```
 npm install
