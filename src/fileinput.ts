@@ -2,29 +2,25 @@ import type {} from 'typed-query-selector/strict'
 
 /* eslint @typescript-eslint/no-explicit-any: 0 */
 function component(blobUrl:string) {
-     const element = document.createElement('video');
-     element.controls = true;
-     element.src=blobUrl;
-     element.classList.add('videostyle');
-     return element;
+     const element = document.getElementById('displayVideo') as HTMLVideoElement;
+     element.hidden = false;
+     element.src = blobUrl;
 }
  
 function inputprocess() {
-     const inputArea = document.querySelectorAll('#inputArea');
+     const inputBtn = document.querySelectorAll('#inputArea');
      const inputFile = document.getElementById('target') as HTMLInputElement;
-     const content = document.getElementById('content') as HTMLDivElement;
 
-     inputArea.forEach((ele) => {
+     inputBtn.forEach((ele) => {
           ele.addEventListener('click', () => {
                inputFile.click();
           })
      })
 
      inputFile.addEventListener('change', function() {
-          const fileList:any = this.files;
-          content.innerHTML = '';
-          const blobUrl: string = URL.createObjectURL(fileList);
-          content.appendChild(component(blobUrl));
+          const fileList: any = this.files;
+          const blobUrl = URL.createObjectURL(fileList[0]);
+          component(blobUrl);
 
      })
 }
