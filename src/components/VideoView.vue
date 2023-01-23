@@ -1,6 +1,6 @@
 <template>
      <div class = "border-dashed border-4 rounded-2xl border-rose-300 w-80 h-45 mx-auto">
-          <video id = "displayVideo" src = "" hidden class = "w-80 mx-auto rounded-2xl" autoplay controls></video>
+          <video id = "displayVideo" src = "" hidden class = "w-80 mx-auto rounded-2xl" autoplay></video>
      </div>
 
      <div id = "inputArea" class = "flex justify-center items-center my-8 cursor-pointer 
