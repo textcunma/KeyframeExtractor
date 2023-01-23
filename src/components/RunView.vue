@@ -5,4 +5,20 @@
                                    hover:drop-shadow-md rounded-lg border-rose-300 w-80 h-10 mx-auto">
           <p class = "text-2xl font-momo tracking-wider">run</p>
      </div>
+
+     <canvas id = "canvas001" class = "w-80 h-45 mx-auto">
+
+     </canvas>
 </template>
+
+
+<script lang = "ts">
+     import cp from "@/cvprocess";
+
+     export default {
+          name: 'VideoView',
+          mounted() {
+               cp.methods.myMethod();
+          }
+     };
+</script>
