@@ -1,27 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <HeaderView />
+  <div class = "w-80 sm:w-1/2 m-10 mx-auto bg-white">
+    <VideoView />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import HeaderView from './components/HeaderView.vue';
+import VideoView from './components/VideoView.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld
+    HeaderView,
+    VideoView
   }
 });
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
