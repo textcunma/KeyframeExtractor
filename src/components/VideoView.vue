@@ -6,7 +6,7 @@
      <div id = "inputArea" class = "flex justify-center items-center my-8 cursor-pointer 
                                         bg-rose-700 hover:bg-rose-800  active:bg-rose-900  drop-shadow-lg 
                                         hover:drop-shadow-md rounded-lg border-rose-300 w-80 h-10 mx-auto">
-          <p class = "text-xl text-white font-momo">input video</p>
+          <p class = "text-xl text-white font-momo">select video</p>
           <input type = "file" hidden id = "target" accept=".mp4">
      </div>
 
