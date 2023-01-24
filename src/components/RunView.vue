@@ -6,14 +6,7 @@
           <p class = "text-2xl font-momo tracking-wider">run</p>
      </div>
 
-     <canvas id = "hid_canvas" class = "w-80 h-45 m-2" hidden></canvas>
-
-     <div id = "result" class = "flex flex-row flex-wrap gap-2">
-          
-
-     </div>
-
-     <!-- <canvas id = "canvas001" class = "w-80 h-45 mx-auto"></canvas> -->
+     <div id = "result" class = "flex flex-row flex-wrap gap-1"></div>
 </template>
 
 

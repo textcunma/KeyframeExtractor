@@ -1,6 +1,6 @@
 <template>
   <HeaderView />
-  <div class = "w-80 sm:w-1/2 m-10 mx-auto bg-white">
+  <div class = "w-90 sm:w-1/2 m-10 mx-auto bg-white">
     <VideoView />
     <RunView />
   </div>
