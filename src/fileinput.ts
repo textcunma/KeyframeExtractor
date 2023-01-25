@@ -12,7 +12,7 @@ function inputprocess() {
           }
           
           console.log(element.src);
-          
+
           const fileList = this.files as FileList;
           if (fileList.length < 1){
                return;
