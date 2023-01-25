@@ -1,18 +1,8 @@
 import cv, { Mat } from "opencv-ts";
-import type {} from 'typed-query-selector/strict'
 
 const channels = [0];
 const histSize = [256];
 const ranges = [0, 256];
-
-// function getHistgram(image : Mat){
-//      const grayimage = new cv.Mat();
-//      cv.cvtColor(image, grayimage, cv.COLOR_RGBA2GRAY);
-//      const hist = new cv.Mat();
-//      cv.calcHist(grayimage, channels, new cv.Mat(), hist, histSize, ranges);
-//      grayimage.delete();
-//      return hist
-// }
 
 function mainprocess(){
      const video = document.getElementById('displayVideo') as HTMLVideoElement;
@@ -45,7 +35,6 @@ function mainprocess(){
                clearInterval(timeid);
                video.controls = true;
                hist.delete();
-               hist2.delete();  
           }
           // 現在のフレームの読み込みが完了したら更新
           if (video.readyState > 3) {
@@ -70,15 +59,13 @@ function mainprocess(){
 
                // calc Histgram
                const matVector = new cv.MatVector();
-               matVector.push_back(gray);
-               
+               matVector.push_back(gray);          
                cv.calcHist(matVector, channels, new cv.Mat(), hist, histSize, ranges);
                cv.normalize(hist, hist, 1, 0, cv.NORM_L1);
+               matVector.delete();
 
                // transform
                if (i > 1) {
-                    console.log("hist: ", hist);
-                    console.log("hist2: ", hist2);
                     similarity = cv.compareHist(hist, hist2, 0);
                     console.log("similarity: ", similarity);
                } else {
@@ -112,6 +99,7 @@ function mainprocess(){
                i += 1;
           }
      }, 0);  
+     hist2.delete();  
 }
 
 function getVideo(){

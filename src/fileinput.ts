@@ -1,5 +1,3 @@
-import type {} from 'typed-query-selector/strict'
-
 /* eslint @typescript-eslint/no-explicit-any: 0 */
 function inputprocess() {
      const inputBtn = document.querySelectorAll('#inputArea');

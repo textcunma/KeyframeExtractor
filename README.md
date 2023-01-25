@@ -1,32 +1,13 @@
 # KeyframeExtractor
+ブラウザ上で動画のキーフレームを抽出<br>
+opencv-tsを用いたヒストグラム類似度によってキーフレーム抽出を行います。
 
+## 操作手順
+1. "select video"ボタンを押してファイルを選択(mp4のみ対応)
+2. "run"ボタンで実行
 
-Class style
-Object style <= select
-
-
-// 参考；https://webpack.js.org/guides/asset-management/
-
-
-## Project setup
+## ローカル実行手順
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
