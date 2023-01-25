@@ -25,9 +25,9 @@ function onFileSelected(landportFlg: Ref<boolean>) {
           if (video.videoHeight > video.videoWidth) {
                landportFlg.value = false;
           }
-          video.hidden = false;
-          video.src = blobUrl;
      })
+     video.hidden = false;
+     video.src = blobUrl;
 
 }
 
