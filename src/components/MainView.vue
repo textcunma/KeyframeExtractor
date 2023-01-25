@@ -33,7 +33,7 @@
      }
 
      const pushInputBtn = () => {
-          fi.pushInputBtn();
+          fi.pushInputBtn(landportFlg);
      }
 
      const cvprocess = () => {

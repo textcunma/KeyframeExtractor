@@ -10,8 +10,6 @@ function onFileSelected(landportFlg: Ref<boolean>) {
           result.innerHTML = "";
      }
      
-     console.log(video.src);
-
      const fileList = inputFile.files as FileList;
      if (fileList.length < 1){
           return;
@@ -19,8 +17,6 @@ function onFileSelected(landportFlg: Ref<boolean>) {
      if (video.src) {
           video.src = "";
      }
-     
-     landportFlg.value = true;
 
      const blobUrl = URL.createObjectURL(fileList[0]);
      video.hidden = false;
@@ -33,7 +29,15 @@ function onFileSelected(landportFlg: Ref<boolean>) {
      })
 }
 
-function pushInputBtn () {
+function pushInputBtn (landportFlg: Ref<boolean>) {
+     // もし映像が入力欄にあるならば隠す
+     const video = document.getElementById('displayVideo') as HTMLVideoElement;
+     video.hidden = true;
+
+     // 横長の入力欄にする
+     landportFlg.value = true;
+
+     // 入力ダイアログを起動
      const inputFile = document.getElementById('inputBtn') as HTMLInputElement;
      inputFile.click();
 }
