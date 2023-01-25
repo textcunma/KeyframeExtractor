@@ -37,7 +37,7 @@
      }
 
      const cvprocess = () => {
-          cp.methods.myMethod();
+          cp.mainprocess();
      }
 
 </script>

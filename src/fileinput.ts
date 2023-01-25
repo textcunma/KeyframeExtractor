@@ -19,6 +19,9 @@ function onFileSelected(landportFlg: Ref<boolean>) {
      if (video.src) {
           video.src = "";
      }
+     
+     landportFlg.value = true;
+
      const blobUrl = URL.createObjectURL(fileList[0]);
      video.hidden = false;
      video.src = blobUrl;
@@ -26,10 +29,6 @@ function onFileSelected(landportFlg: Ref<boolean>) {
      video.addEventListener('canplay', function() {
           if (video.videoHeight > video.videoWidth) {
                landportFlg.value = false;
-          } else {
-               landportFlg.value = true;
-               // const videoInfo = video.getBoundingClientRect();  // 312 
-               // console.log(videoInfo);
           }
      })
 }

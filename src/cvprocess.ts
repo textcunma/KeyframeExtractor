@@ -103,10 +103,5 @@ function mainprocess(){
 }
 
 export default {
-     name: 'cvprocess',
-     methods: {
-          myMethod() {
-               mainprocess();
-          }
-     }
+     mainprocess
 }
