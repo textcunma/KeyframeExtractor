@@ -38,8 +38,8 @@ function mainprocess(){
           }
           // 現在のフレームの読み込みが完了したら更新
           if (video.readyState > 3) {
-               console.log("state: ", video.readyState);
-               console.log("second: ", video.currentTime);
+               // console.log("state: ", video.readyState);
+               // console.log("second: ", video.currentTime);
                
                const canvas = document.createElement('canvas');
                canvas.width = width;
@@ -67,7 +67,7 @@ function mainprocess(){
                // transform
                if (i > 1) {
                     similarity = cv.compareHist(hist, hist2, 0);
-                    console.log("similarity: ", similarity);
+                    // console.log("similarity: ", similarity);
                } else {
                     hist2 = hist.clone();
                }

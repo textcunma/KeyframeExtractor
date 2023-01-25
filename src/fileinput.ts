@@ -19,14 +19,16 @@ function onFileSelected(landportFlg: Ref<boolean>) {
      }
 
      const blobUrl = URL.createObjectURL(fileList[0]);
-     video.hidden = false;
      video.src = blobUrl;
 
      video.addEventListener('canplay', function() {
           if (video.videoHeight > video.videoWidth) {
                landportFlg.value = false;
           }
+          video.hidden = false;
+          video.src = blobUrl;
      })
+
 }
 
 function pushInputBtn (landportFlg: Ref<boolean>) {

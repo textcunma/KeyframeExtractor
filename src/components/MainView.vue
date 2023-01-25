@@ -28,6 +28,7 @@
 
      const landportFlg = ref(true);
 
+
      const onFileSelected = () => {
           fi.onFileSelected(landportFlg);
      }
