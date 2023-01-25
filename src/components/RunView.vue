@@ -6,7 +6,7 @@
           <p class = "text-2xl font-momo tracking-wider">run</p>
      </div>
 
-     <div id = "result" class = "flex flex-row flex-wrap gap-1"></div>
+     <div id = "result" class = "flex flex-row flex-wrap gap-1 lg:m-0 m-10"></div>
 </template>
 
 

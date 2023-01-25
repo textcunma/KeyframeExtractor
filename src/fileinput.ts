@@ -13,6 +13,11 @@ function inputprocess() {
 
      inputFile.addEventListener('change', function() {
           const element = document.getElementById('displayVideo') as HTMLVideoElement;
+          const result = document.getElementById("result") as HTMLDivElement;
+          if (result.childNodes.length != 0) {
+               result.innerHTML = "";
+          }
+          
           console.log(element.src);
           const fileList: any = this.files;
           if (fileList.length < 1){
