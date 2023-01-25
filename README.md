@@ -2,6 +2,12 @@
 ブラウザ上で動画のキーフレームを抽出<br>
 opencv-tsを用いたヒストグラム類似度によってキーフレーム抽出を行います。
 
+<div align="center">
+<img src = "./assets/mainwindow.png" alt = "メインウィンドウ" width = "200">
+</div>
+
+
+
 ## URL
 https://textcunma.github.io/KeyframeExtractor/
 
