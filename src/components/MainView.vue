@@ -1,6 +1,6 @@
 <template>
      <div id = "inputArea" :class = "[ landportFlg ? 'landscape' : 'portrait']">
-          <video id = "displayVideo" src = "" hidden class = "mx-auto rounded-2xl" preload="auto" controls></video>
+          <video id = "displayVideo" src = "" hidden class = "mx-auto rounded-2xl" preload = "auto" controls></video>
      </div>
 
      <button @mousedown = "pushInputBtn" class = "flex justify-center items-center my-8 cursor-pointer 
@@ -28,13 +28,12 @@
 
      const landportFlg = ref(true);
 
-
      const onFileSelected = () => {
           fi.onFileSelected(landportFlg);
      }
 
      const pushInputBtn = () => {
-          fi.pushInputBtn(landportFlg);
+          fi.pushInputBtn();
      }
 
      const cvprocess = () => {

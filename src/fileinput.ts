@@ -20,25 +20,25 @@ function onFileSelected(landportFlg: Ref<boolean>) {
 
      const blobUrl = URL.createObjectURL(fileList[0]);
      video.src = blobUrl;
-
-     video.addEventListener('canplay', function() {
-          if (video.videoHeight > video.videoWidth) {
-               landportFlg.value = false;
-          }
-     })
      video.hidden = false;
-     video.src = blobUrl;
+     console.log(video.src);
 
+     video.addEventListener('durationchange', function() {
+          console.log("video.videoHeight: ", video.videoHeight);
+          console.log("video.videoWidth: ", video.videoWidth);
+          if (video.videoHeight > video.videoWidth) {
+               console.log("toFalse");
+               console.log("flg: ", landportFlg.value);
+               landportFlg.value = false;
+          } else {
+               console.log("toTrue");
+               console.log("flg: ", landportFlg.value);
+               landportFlg.value = true;
+          }
+     }, {once: true});
 }
 
-function pushInputBtn (landportFlg: Ref<boolean>) {
-     // もし映像が入力欄にあるならば隠す
-     const video = document.getElementById('displayVideo') as HTMLVideoElement;
-     video.hidden = true;
-
-     // 横長の入力欄にする
-     landportFlg.value = true;
-
+function pushInputBtn () {
      // 入力ダイアログを起動
      const inputFile = document.getElementById('inputBtn') as HTMLInputElement;
      inputFile.click();

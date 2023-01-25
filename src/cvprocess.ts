@@ -17,10 +17,8 @@ function mainprocess(){
      const width = videoInfo.width;
      const height = videoInfo.height;
      const duration = video.duration;
-     console.log("duration: " ,duration);
+     // console.log("duration: " ,duration);
 
-     video.width = width;
-     video.height = height;
      video.currentTime = 0.0;
      video.controls = false;
      
@@ -32,9 +30,13 @@ function mainprocess(){
 
      const timeid = setInterval(function() {
           if(video.ended || duration - video.currentTime < 0.01){
-               clearInterval(timeid);
-               video.controls = true;
+               // console.log(hist);
+               // console.log(hist2);
                hist.delete();
+               hist2.delete();
+               video.controls = true;
+               clearInterval(timeid);
+               return;
           }
           // 現在のフレームの読み込みが完了したら更新
           if (video.readyState > 3) {
@@ -99,7 +101,6 @@ function mainprocess(){
                i += 1;
           }
      }, 0);  
-     hist2.delete();  
 }
 
 export default {
