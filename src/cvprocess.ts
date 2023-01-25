@@ -102,19 +102,11 @@ function mainprocess(){
      hist2.delete();  
 }
 
-function getVideo(){
-     const runBtn = document.querySelectorAll('#runArea');
-     
-     runBtn.forEach((ele) => {
-          ele.addEventListener('click', mainprocess);
-     })
-}
-
 export default {
      name: 'cvprocess',
      methods: {
           myMethod() {
-               getVideo();
+               mainprocess();
           }
      }
 }
