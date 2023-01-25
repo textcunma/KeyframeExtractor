@@ -1,37 +1,46 @@
-function inputprocess() {
-     const inputFile = document.getElementById('target') as HTMLInputElement;
-     const element = document.getElementById('displayVideo') as HTMLVideoElement;
 
-     inputFile.click();
+import { Ref } from 'vue';
 
-     inputFile.addEventListener('change', function() {
-          const result = document.getElementById("result") as HTMLDivElement;
+function onFileSelected(landportFlg: Ref<boolean>) {
+     const inputFile = document.getElementById('inputBtn') as HTMLInputElement;
+     const video = document.getElementById('displayVideo') as HTMLVideoElement;
+     const result = document.getElementById("result") as HTMLDivElement;
 
-          if (result.childNodes.length != 0) {
-               result.innerHTML = "";
+     if (result.childNodes.length != 0) {
+          result.innerHTML = "";
+     }
+     
+     console.log(video.src);
+
+     const fileList = inputFile.files as FileList;
+     if (fileList.length < 1){
+          return;
+     }
+     if (video.src) {
+          video.src = "";
+     }
+     const blobUrl = URL.createObjectURL(fileList[0]);
+     video.hidden = false;
+     video.src = blobUrl;
+
+     video.addEventListener('canplay', function() {
+          if (video.videoHeight > video.videoWidth) {
+               landportFlg.value = false;
+          } else {
+               landportFlg.value = true;
+               // const videoInfo = video.getBoundingClientRect();  // 312 
+               // console.log(videoInfo);
           }
-          
-          console.log(element.src);
-
-          const fileList = this.files as FileList;
-          if (fileList.length < 1){
-               return;
-          }
-          if (element.src) {
-               element.src = "";
-          }
-          const blobUrl = URL.createObjectURL(fileList[0]);
-          element.hidden = false;
-          element.src = blobUrl;
      })
 }
 
-export default {
-     name: 'fileinput',
-     methods: {
-          myMethod() {
-               inputprocess();
-          }
-     }
+function pushInputBtn () {
+     const inputFile = document.getElementById('inputBtn') as HTMLInputElement;
+     inputFile.click();
+}
 
+
+export default {
+     pushInputBtn,
+     onFileSelected
 }
