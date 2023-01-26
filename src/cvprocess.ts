@@ -19,6 +19,10 @@ function mainprocess(){
      const duration = video.duration;
      // console.log("duration: " ,duration);
 
+     // スマホ表示におけるバグ対策
+     video.play();
+     video.pause();
+
      video.currentTime = 0.0;
      video.controls = false;
      
@@ -32,6 +36,12 @@ function mainprocess(){
           if(video.ended || duration - video.currentTime < 0.01){
                // console.log(hist);
                // console.log(hist2);
+
+               // 結果に移動
+               result.scrollIntoView({
+                    behavior: "smooth",
+               });
+
                hist.delete();
                hist2.delete();
                video.controls = true;
@@ -101,6 +111,7 @@ function mainprocess(){
                i += 1;
           }
      }, 0);  
+
 }
 
 export default {
