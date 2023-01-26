@@ -17,6 +17,21 @@
           <p class = "text-2xl font-momo tracking-wider">run</p>
      </button>
 
+     <!-- <form class = "flex justify-center m-8">
+          <div class = "flex flex-col">
+               <div class = "flex mb-4" v-for="(style, index) in styles" :key="index">
+                    <div class="flex items-center h-5">
+                         <input :id="'style' + (index + 1)" :aria-describedby="'subtext' + (index + 1)" type="radio" name="style" :checked = "style.check" class = "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
+                    </div>
+
+                    <div class="ml-2 text-sm">
+                         <label :for="'style' + (index + 1)" class="font-medium text-gray-900 dark:text-gray-300">{{ style.name }}</label>
+                         <p :id="'subtext' + (index + 1)" class="text-xs font-normal text-gray-500 dark:text-gray-300">{{ style.description }}</p>
+                    </div>
+               </div>
+          </div>
+     </form> -->
+
      <div id = "result" class = "flex flex-row flex-wrap gap-1 lg:m-0 justify-center"></div>
 
 </template>
@@ -27,6 +42,13 @@
      import { ref } from 'vue';
 
      const landportFlg = ref(true);
+
+     // const styles = ref(
+     //      [
+     //           { name: 'Style 1', description: 'only Histogram', check: true },
+     //           { name: 'Style 2', description: 'Histgoram + Clustering', check: false } ,
+     //      ]
+     // );
 
      const onFileSelected = () => {
           fi.onFileSelected(landportFlg);
